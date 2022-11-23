@@ -4,12 +4,9 @@ export default class PerspectiveCamera {
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(45, 400 / 300, 1, 10);
   renderer = new THREE.WebGL1Renderer({ antialias: true });
-  cube = new THREE.BoxHelper(
-    new THREE.Mesh(
-      new THREE.BoxGeometry(1, 1, 1),
-      new THREE.LineBasicMaterial()
-    ),
-    0xff0000
+  cube = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1, 3),
+    new THREE.MeshBasicMaterial({ color: 0xff00000, wireframe: true })
   );
 
   rendererSetting = (dom = document.querySelector("#perspectiveCamera")) => {
